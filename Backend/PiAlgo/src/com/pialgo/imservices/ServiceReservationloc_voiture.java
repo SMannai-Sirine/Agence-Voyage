@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import model.Reservationloc_voiture;
-import util.maConnex;
+import util.maConnexion;
 
 /**
  *
@@ -19,14 +19,14 @@ import util.maConnex;
  */
 
 public class ServiceReservationloc_voiture implements IReservationloc_voiture {
-    Connection cnx  = maConnex.getInstance().getCnx();
+    Connection cnx  = maConnexion.getInstance().getCnx();
     
  
 
     @Override
     public void  ajouterReservationloc_voiture (Reservationloc_voiture rlv) {
 
-   String Req = "INSERT INTO `Reservationloc_voiture`(`dateReservationloc_voiture`, `idUtilisateur` , `idvoiture`) VALUES ('?,?,?')";
+   String Req = "INSERT INTO `Reservationloc_voiture`(`dateReservationloc_voiture`, `idU` , `idvoiture`) VALUES ('?,?,?')";
    try {
           Statement st = cnx.createStatement();
           st.executeUpdate (Req);
@@ -54,11 +54,11 @@ public class ServiceReservationloc_voiture implements IReservationloc_voiture {
      public void modifierReservationloc_voiture (Reservationloc_voiture rlv, int idReservationloc_voiture) {
        
                 try {
-                    String Req = "UPDATE Reservationloc_voiture SET dateReservationloc_voiture=?, idUtilisateur=?, idvoiture=?  WHERE('idReservationloc_voiture'= "+idReservationloc_voiture+")";
+                    String Req = "UPDATE Reservationloc_voiture SET dateReservationloc_voiture=?, idU=?, idvoiture=?  WHERE('idReservationloc_voiture'= "+idReservationloc_voiture+")";
                     
                     PreparedStatement ps = cnx.prepareStatement(Req);
                     ps.setString(1, rlv.getDateReservationloc_voiture());
-                    ps.setInt(2, rlv.getIdUtilisateur());
+                    ps.setInt(2, rlv.getIdU());
                     ps.setInt(3, rlv.getIdvoiture());
                     {
                         System.out.println(" Reservation loc_voiture modifiee avec succes");
@@ -81,6 +81,7 @@ public class ServiceReservationloc_voiture implements IReservationloc_voiture {
     }
 
   
+
 
 
  

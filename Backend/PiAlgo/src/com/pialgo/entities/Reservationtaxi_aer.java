@@ -17,19 +17,19 @@ public class Reservationtaxi_aer {
 //var
     private int idReservationtaxi_aer ;
     private String dateReservationtaxi_aer ;
-    private int idUtilisateur ;
+    private int idU ;
     private int idtaxi ;
 
-    public Reservationtaxi_aer(int idReservationtaxi_aer, String dateReservationtaxi_aer, int idUtilisateur, int idtaxi) {
+    public Reservationtaxi_aer(int idReservationtaxi_aer, String dateReservationtaxi_aer, int idU, int idtaxi) {
         this.idReservationtaxi_aer = idReservationtaxi_aer;
         this.dateReservationtaxi_aer = dateReservationtaxi_aer;
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idU;
         this.idtaxi = idtaxi;
     }
 
-    public Reservationtaxi_aer(String dateReservationtaxi_aer, int idUtilisateur, int idtaxi) {
+    public Reservationtaxi_aer(String dateReservationtaxi_aer, int idU, int idtaxi) {
         this.dateReservationtaxi_aer = dateReservationtaxi_aer;
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idU;
         this.idtaxi = idtaxi;
     }
 
@@ -50,11 +50,11 @@ public class Reservationtaxi_aer {
     }
 
     public int getIdUtilisateur() {
-        return idUtilisateur;
+        return idU;
     }
 
     public void setIdUtilisateur(int idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idU;
     }
 
     public int getIdtaxi() {
@@ -64,8 +64,13 @@ public class Reservationtaxi_aer {
     public void setIdtaxi(int idtaxi) {
         this.idtaxi = idtaxi;
     }
+
+    public int getIdU() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
     
 }
+

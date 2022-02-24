@@ -17,22 +17,22 @@ public class Reservationloc_voiture {
 //var
     private int idReservationloc_voiture ;
     private String dateReservationloc_voiture ;
-    private int idUtilisateur ;
+    private int idU ;
     private int idvoiture ;
 
     
  //constructors
 
-    public Reservationloc_voiture(int idReservationloc_voiture, String dateReservationloc_voiture, int idUtilisateur, int idvoiture) {
+    public Reservationloc_voiture(int idReservationloc_voiture, String dateReservationloc_voiture, int idU, int idvoiture) {
         this.idReservationloc_voiture = idReservationloc_voiture;
         this.dateReservationloc_voiture = dateReservationloc_voiture;
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idU;
         this.idvoiture = idvoiture;
     }
 
-    public Reservationloc_voiture(String dateReservationloc_voiture, int idUtilisateur, int idvoiture) {
+    public Reservationloc_voiture(String dateReservationloc_voiture, int idU, int idvoiture) {
         this.dateReservationloc_voiture = dateReservationloc_voiture;
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idU;
         this.idvoiture = idvoiture;
     }
 
@@ -57,11 +57,11 @@ public class Reservationloc_voiture {
     }
 
     public int getIdUtilisateur() {
-        return idUtilisateur;
+        return idU;
     }
 
     public void setIdUtilisateur(int idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
+        this.idU = idUtilisateur;
     }
 
     public int getIdvoiture() {
@@ -72,8 +72,19 @@ public class Reservationloc_voiture {
         this.idvoiture = idvoiture;
     }
 
+    public int getIdU() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
+
+
+
+
+}
+    
+
+    
 
 
 
