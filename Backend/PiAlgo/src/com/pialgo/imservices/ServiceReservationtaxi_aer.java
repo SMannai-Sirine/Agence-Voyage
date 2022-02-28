@@ -11,21 +11,21 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import model.Reservationtaxi_aer;
-import util.maConnex;
+import util.maConnexion;
 
 /**
  *
  * @author DELL
  */
 public class ServiceReservationtaxi_aer implements IReservationtaxi_aer {
-    Connection cnx  = maConnex.getInstance().getCnx();
+    Connection cnx  = maConnexion.getInstance().getCnx();
     
  
 
     @Override
     public void  ajouterReservationtaxi_aer (Reservationtaxi_aer rta) {
 
-   String Req = "INSERT INTO `Reservationtaxi_aer`(`dateReservationtaxi_aer`, `idUtilisateur` , `idtaxi`) VALUES ('?,?,?')";
+   String Req = "INSERT INTO `Reservationtaxi_aer`(`dateReservationtaxi_aer`, `idU` , `idtaxi`) VALUES ('?,?,?')";
    try {
           Statement st = cnx.createStatement();
           st.executeUpdate (Req);
@@ -53,11 +53,11 @@ public class ServiceReservationtaxi_aer implements IReservationtaxi_aer {
      public void modifierReservationtaxi_aer (Reservationtaxi_aer rta, int idReservationtaxi_aer) {
        
                 try {
-                    String Req = "UPDATE Reservationtaxi_aer SET dateReservationtaxi_aer=?, idUtilisateur=?, idtaxi=?  WHERE('idReservationtaxi_aer'= "+idReservationtaxi_aer+")";
+                    String Req = "UPDATE Reservationtaxi_aer SET dateReservationtaxi_aer=?, idU=?, idtaxi=?  WHERE('idReservationtaxi_aer'= "+idReservationtaxi_aer+")";
                     
                     PreparedStatement ps = cnx.prepareStatement(Req);
                     ps.setString(1, rta.getDateReservationtaxi_aer());
-                    ps.setInt(2, rta.getIdUtilisateur());
+                    ps.setInt(2, rta.getIdU());
                     ps.setInt(3, rta.getIdtaxi());
                     {
                         System.out.println(" Reservation taxi aer modifiee avec succes");

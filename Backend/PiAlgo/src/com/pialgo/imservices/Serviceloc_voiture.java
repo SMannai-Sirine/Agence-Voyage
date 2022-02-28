@@ -14,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import model.loc_voiture;
-import util.maConnex;
+import util.maConnexion;
 
 /**
  *
@@ -22,7 +22,7 @@ import util.maConnex;
  */
 public class Serviceloc_voiture implements Iloc_voiture {
     //var
-Connection cnx  = maConnex.getInstance().getCnx();
+Connection cnx  = maConnexion.getInstance().getCnx();
     
     @Override
     public void ajouterloc_voiture(loc_voiture v) {
@@ -43,9 +43,16 @@ Connection cnx  = maConnex.getInstance().getCnx();
 
 
 
-    @Override
+@Override
     public void ajouterloc_voiture2(loc_voiture v) {
-        String Req = "INSERT INTO `loc_voiture`(`date_res`, `dure_res`, `pays_des`, `type_dem` , `prix` ) VALUES (?,?,?,?,?)";
+        String Req = "INSERT INTO loc_voiture`(`date_res`, `dure_res`, `pays_des`, `type_dem` , `prix` ) VALUES (?,?,?,?,?)";
+        if (v.getDure_res()> 15) 
+        {
+            int prix_remise;
+            prix_remise = (int) (v.getPrix() - (v.getPrix() *20 /100));
+            v.setPrix(prix_remise);
+        }
+        
         try {
             PreparedStatement ps = cnx.prepareStatement(Req);
             ps.setString(1, v.getDate_res());
@@ -119,6 +126,10 @@ Connection cnx  = maConnex.getInstance().getCnx();
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      }
+
+
+
+    
 
 
 
