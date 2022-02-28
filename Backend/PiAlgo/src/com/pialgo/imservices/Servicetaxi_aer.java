@@ -14,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import model.taxi_aer;
-import util.maConnex;
+import util.maConnexion;
 
 /**
  *
@@ -24,7 +24,7 @@ public class Servicetaxi_aer implements Itaxi_aer {
     
    
     //var
-            Connection cnx = maConnex.getInstance().getCnx();
+            Connection cnx = maConnexion.getInstance().getCnx();
     
     
         @Override
@@ -118,3 +118,4 @@ public class Servicetaxi_aer implements Itaxi_aer {
 
     }
     
+
