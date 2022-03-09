@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Client.ResVoitureController">
+   <children>
+      <ComboBox fx:id="ComboPays" layoutX="288.0" layoutY="149.0" onAction="#fnSelected" prefHeight="57.0" prefWidth="221.0" />
+      <ComboBox fx:id="ComboVoiture" layoutX="288.0" layoutY="254.0" prefHeight="57.0" prefWidth="221.0" />
+      <DatePicker fx:id="tfDate" layoutX="287.0" layoutY="358.0" prefHeight="43.0" prefWidth="223.0" />
+      <TextField fx:id="tfPeriod" layoutX="280.0" layoutY="454.0" prefHeight="43.0" prefWidth="226.0" />
+      <Label layoutX="285.0" layoutY="97.0" prefHeight="43.0" prefWidth="221.0" text="Pays">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="205.0" prefHeight="43.0" prefWidth="221.0" text="Voiture">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="286.0" layoutY="311.0" prefHeight="43.0" prefWidth="221.0" text="Date:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="405.0" prefHeight="43.0" prefWidth="221.0" text="Periode">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="fnReserver" layoutX="279.0" layoutY="538.0" mnemonicParsing="false" onAction="#fnReserver" prefHeight="43.0" prefWidth="243.0" text="Reserver" />
+      <Button fx:id="btnRetour" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" onAction="#fnRetour" prefHeight="40.0" prefWidth="69.0" text="Retour" />
+   </children>
+</AnchorPane>

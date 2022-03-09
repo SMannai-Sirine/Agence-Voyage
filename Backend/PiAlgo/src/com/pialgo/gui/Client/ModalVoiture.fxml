@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.Client.ModalVoitureController">
+   <children>
+      <HBox layoutX="48.0" layoutY="40.0" prefHeight="331.0" prefWidth="518.0">
+         <children>
+            <VBox prefHeight="269.0" prefWidth="239.0">
+               <children>
+                  <Label prefHeight="70.0" prefWidth="241.0" text="Date Reservation" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" text="Duree" />
+                  <Label layoutX="10.0" layoutY="150.0" prefHeight="70.0" prefWidth="241.0" text="Pays" />
+                  <Label layoutX="10.0" layoutY="150.0" prefHeight="70.0" prefWidth="241.0" text="Voiture" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" text="Prix" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" text="Remise" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" text="Taux Remise" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" text="Etat" />
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="269.0" prefWidth="239.0">
+               <children>
+                  <Label fx:id="lbDateRes" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbDuree" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbPays" layoutX="10.0" layoutY="80.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbVoiture" layoutX="10.0" layoutY="150.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbPrix" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbRemise" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbTauxRemise" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" />
+                  <Label fx:id="lbEtat" layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="241.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label layoutX="258.0" layoutY="8.0" text="Details">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

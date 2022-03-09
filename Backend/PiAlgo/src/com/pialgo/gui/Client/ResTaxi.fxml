@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Client.ResTaxiController">
+   <children>
+      <ComboBox fx:id="ComboPays" layoutX="224.0" layoutY="180.0" onAction="#fnSelected" prefHeight="66.0" prefWidth="342.0" />
+      <ComboBox fx:id="ComboTaxi" layoutX="223.0" layoutY="301.0" prefHeight="66.0" prefWidth="342.0" />
+      <TextField fx:id="tfHeure" layoutX="224.0" layoutY="417.0" prefHeight="46.0" prefWidth="342.0" />
+      <Label layoutX="224.0" layoutY="120.0" prefHeight="46.0" prefWidth="342.0" text="Pays :">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="223.0" layoutY="254.0" prefHeight="46.0" prefWidth="342.0" text="Taxi :">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="224.0" layoutY="367.0" prefHeight="46.0" prefWidth="342.0" text="Heure:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRetour" layoutX="28.0" layoutY="38.0" mnemonicParsing="false" onAction="#fnRetour" prefHeight="46.0" prefWidth="81.0" text="Retour" />
+      <Button fx:id="btnReserver" layoutX="302.0" layoutY="527.0" mnemonicParsing="false" onAction="#fnReserver" prefHeight="46.0" prefWidth="189.0" text="Reserver" />
+   </children>
+</AnchorPane>

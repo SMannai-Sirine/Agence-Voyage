@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Client.MesResTaxiController">
+   <children>
+      <VBox layoutX="43.0" layoutY="152.0" prefHeight="330.0" prefWidth="129.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="83.0" text="Date">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PkDate" />
+            <Label prefHeight="28.0" prefWidth="83.0" text="Pays">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ComboPays" onAction="#fnSelectedPays" prefHeight="19.0" prefWidth="135.0" />
+            <Label prefHeight="28.0" prefWidth="83.0" text="Taxi">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ComboVoiture" prefHeight="19.0" prefWidth="135.0" />
+            <Label prefHeight="38.0" prefWidth="128.0" text="Prix" />
+            <Label fx:id="lbPrix" prefHeight="17.0" prefWidth="111.0" />
+            <Label layoutX="10.0" layoutY="340.0" prefHeight="38.0" prefWidth="128.0" text="Etat" />
+            <Label fx:id="lbEtat" layoutX="10.0" layoutY="357.0" prefHeight="17.0" prefWidth="111.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="269.0" layoutY="492.0" prefHeight="100.0" prefWidth="436.0" spacing="30.0">
+         <children>
+            <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#fnAjouter" prefHeight="50.0" prefWidth="85.0" text="Ajouter" />
+            <Button fx:id="btnModifier" layoutX="186.0" layoutY="35.0" mnemonicParsing="false" onAction="#fnModifier" prefHeight="50.0" prefWidth="85.0" text="Modifier" />
+            <Button fx:id="btnAnnuler" layoutX="243.0" layoutY="35.0" mnemonicParsing="false" onAction="#fnAnnuler" prefHeight="50.0" prefWidth="85.0" text="Annuler" />
+         </children>
+      </HBox>
+      <Button fx:id="btnRetour" layoutX="65.0" layoutY="21.0" mnemonicParsing="false" onAction="#fnRetour" prefHeight="50.0" prefWidth="85.0" text="Retour" />
+      <Label fx:id="lbId" visible="false" />
+      <ListView fx:id="listView" layoutX="294.0" layoutY="82.0" prefHeight="410.0" prefWidth="364.0" />
+   </children>
+</AnchorPane>
