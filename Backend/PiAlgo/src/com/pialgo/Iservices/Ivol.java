@@ -6,6 +6,7 @@
 package interfaces;
 
 
+import java.sql.Date;
 import java.util.List;
 import model.Vol;
 
@@ -17,12 +18,15 @@ public interface Ivol {
     //Add
     //public void ajouterVol(Vol v);
     public void ajouterVol2(Vol v);
-    public void modifierVol (int idVol,String newRefAvion,String newCompagnieAerienne,String newAeroDepart,String newAeroArrivee,String newDateDepart,float newDuree,int newNbSieges,float newPrix);
+    public void modifierVol (int idVol,String newRefAvion,String newCompagnieAerienne,String newAeroDepart,String newAeroArrivee,Date newDateDepart,float newDuree,int newNbSieges,float newPrix);
     //delete
-    public void supprimerVol (int idVol);
+    public void supprimerVol (int id);
     //List
     public List<Vol> afficherVol();
     
-    public List<Vol> rechercheTrieVol(String aeroDepart,String aeroArrive,String dateDepart);
+    //public List<Vol> rechercheTrieVol(String aeroDepart,String aeroArrive,Date dateDepart);
+    
+    public List<Vol> rechercheVol(String refAvion,String compagnieAerienne,String aeroDepart,String aeroArrive,String dateDepart,String duree,String nbSieges,String prix);
+    public List<Vol> rechercheVolTrie(String compagnieAerienne,String aeroDepart,String aeroArrive,String dateDepart);
     
 }

@@ -27,7 +27,7 @@ public class ServiceReservationCroisiere implements IreservationCroisiere{
     @Override
     public void ajouterReservationCroisiere(ReservationCroisiere rC){
        
-        String request = "INSERT INTO `reservationCroisiere`(`dateReservationCroisiere`, `idU`, `idCroisiere`) VALUES ('"+rC.getDateReservationCroisiere()+"','"+rC.getIdUtilisateur()+"','"+rC.getIdCroisiere()+"')";
+        String request = "INSERT INTO `reservationCroisiere`( `idU`, `idCroisiere`) VALUES ('"+rC.getIdUtilisateur()+"','"+rC.getIdCroisiere()+"')";
         String req1= "UPDATE `croisiere` SET `nbCabines` = (`nbCabines`-1) WHERE (`idCroisiere` = "+rC.getIdCroisiere()+")";
         
             try {
@@ -92,7 +92,7 @@ public class ServiceReservationCroisiere implements IreservationCroisiere{
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {                
-                reservationCroisieres.add(new ReservationCroisiere(rs.getString(1), rs.getInt("idU"), rs.getInt("idCroisiere")));
+                reservationCroisieres.add(new ReservationCroisiere(rs.getInt(1), rs.getInt("idU"), rs.getInt("idCroisiere")));
             }
             
         } catch (SQLException ex) {

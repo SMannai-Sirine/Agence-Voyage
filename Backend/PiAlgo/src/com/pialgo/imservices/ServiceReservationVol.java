@@ -27,8 +27,8 @@ public class ServiceReservationVol implements IreservationVol{
 
     @Override
     public void ajouterReservationVol(ReservationVol rV){
-       
-        String request = "INSERT INTO `reservationVol`(`dateReservationVol`, `idU`, `idVol`) VALUES ('"+rV.getDateReservation()+"','"+rV.getIdUtilisateur()+"','"+rV.getIdVol()+"')";
+        
+        String request = "INSERT INTO `reservationVol`( `idU`,`idVol`) VALUES ('"+rV.getIdUtilisateur()+"','"+rV.getIdVol()+"')";
         String req1= "UPDATE `Vol` SET `nbSieges` = (`nbSieges`-1) WHERE (`idVol` = "+rV.getIdVol()+")";
         
             try {
@@ -92,7 +92,7 @@ public class ServiceReservationVol implements IreservationVol{
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {                
-                reservationVols.add(new ReservationVol(rs.getString(1), rs.getInt("idU"), rs.getInt("idVol")));
+                reservationVols.add(new ReservationVol(rs.getInt("idReservationVol"), rs.getInt("idU"),rs.getInt("idVol")));
             }
             
         } catch (SQLException ex) {
