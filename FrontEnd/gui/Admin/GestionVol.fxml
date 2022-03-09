@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="570.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.GestionVolController">
+   <children>
+      <ListView fx:id="listViewVol" layoutX="19.0" layoutY="74.0" onMouseClicked="#listViewSelection" orientation="HORIZONTAL" prefHeight="258.0" prefWidth="674.0" />
+      <Button layoutX="365.0" layoutY="490.0" mnemonicParsing="false" onAction="#ajouterAction" prefHeight="46.0" prefWidth="96.0" text="Ajouter" />
+      <Button layoutX="498.0" layoutY="374.0" mnemonicParsing="false" onAction="#modifierAction" prefHeight="46.0" prefWidth="96.0" text="Modifier" />
+      <Button layoutX="606.0" layoutY="374.0" mnemonicParsing="false" onAction="#supprimerAction" prefHeight="46.0" prefWidth="96.0" text="Supprimer" />
+      <Button layoutX="31.0" layoutY="32.0" mnemonicParsing="false" onAction="#retourButton" text="Retour" />
+      <TextField fx:id="refAvionTF" layoutX="19.0" layoutY="372.0" />
+      <DatePicker fx:id="dateDepartDP" layoutX="181.0" layoutY="442.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="compagnieAerienneTF" layoutX="19.0" layoutY="442.0" />
+      <TextField fx:id="aeroDepartTF" layoutX="19.0" layoutY="513.0" />
+      <TextField fx:id="aeroArriveTF" layoutX="181.0" layoutY="372.0" />
+      <TextField fx:id="dureeTF" layoutX="181.0" layoutY="510.0" />
+      <TextField fx:id="nbSiegesTF" layoutX="338.0" layoutY="372.0" />
+      <TextField fx:id="prixTF" layoutX="338.0" layoutY="442.0" />
+      <Label layoutX="17.0" layoutY="347.0" text="Référence de l'avion :" />
+      <Label layoutX="19.0" layoutY="485.0" text="Aéroport de départ :" />
+      <Label layoutX="16.0" layoutY="415.0" text="Compagnie aérienne :" />
+      <Label layoutX="181.0" layoutY="347.0" text="Aéroport d'arrivé :" />
+      <Label layoutX="338.0" layoutY="415.0" text="Prix d'un siège réservé :" />
+      <Label layoutX="339.0" layoutY="347.0" text="Nombre de sièges :" />
+      <Label layoutX="181.0" layoutY="485.0" text="Durée du vol :" />
+      <Label layoutX="181.0" layoutY="415.0" text="Date de départ :" />
+      <Button layoutX="498.0" layoutY="432.0" mnemonicParsing="false" onAction="#rechercherAction" prefHeight="46.0" prefWidth="96.0" text="Rechercher" />
+      <Button layoutX="606.0" layoutY="432.0" mnemonicParsing="false" onAction="#afficherAction" prefHeight="46.0" prefWidth="96.0" text="Afficher" />
+      <Button layoutX="558.0" layoutY="490.0" mnemonicParsing="false" onAction="#pdfAction" prefHeight="46.0" prefWidth="96.0" text="PDF" />
+   </children>
+</AnchorPane>

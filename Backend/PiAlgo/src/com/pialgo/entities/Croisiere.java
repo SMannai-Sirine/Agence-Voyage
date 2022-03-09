@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.sql.Date;
+
 
 
 /**
@@ -19,8 +21,8 @@ public class Croisiere {
     private String CompagnieNavigation;
     private String portDepart;
     private String portArrive;
-    private String dateDepart;
-    private String dateArrivee;
+    private Date dateDepart;
+    private Date dateArrivee;
     private int nbCabines;
     private float prixCroisiere;
 
@@ -29,7 +31,7 @@ public class Croisiere {
     public Croisiere() {
     }
 
-    public Croisiere(int idCroisiere, String refBateau, String CompagnieNavigation, String portDepart, String portArrive, String dateDepart, String dateArrivee, int nbCabines, float prixCroisiere) {
+    public Croisiere(int idCroisiere, String refBateau, String CompagnieNavigation, String portDepart, String portArrive, Date dateDepart, Date dateArrivee, int nbCabines, float prixCroisiere) {
         this.idCroisiere = idCroisiere;
         this.refBateau = refBateau;
         this.CompagnieNavigation = CompagnieNavigation;
@@ -41,7 +43,7 @@ public class Croisiere {
         this.prixCroisiere = prixCroisiere;
     }
 
-    public Croisiere(String refBateau, String CompagnieNavigation, String portDepart, String portArrive, String dateDepart, String dateArrivee, int nbCabines, float prixCroisiere) {
+    public Croisiere(String refBateau, String CompagnieNavigation, String portDepart, String portArrive, Date dateDepart, Date dateArrivee, int nbCabines, float prixCroisiere) {
         this.refBateau = refBateau;
         this.CompagnieNavigation = CompagnieNavigation;
         this.portDepart = portDepart;
@@ -72,11 +74,11 @@ public class Croisiere {
         return portArrive;
     }
 
-    public String getDateDepart() {
+    public Date getDateDepart() {
         return dateDepart;
     }
 
-    public String getDateArrivee() {
+    public Date getDateArrivee() {
         return dateArrivee;
     }
 
@@ -108,11 +110,11 @@ public class Croisiere {
         this.portArrive = portArrive;
     }
 
-    public void setDateDepart(String dateDepart) {
+    public void setDateDepart(Date dateDepart) {
         this.dateDepart = dateDepart;
     }
 
-    public void setDateArrivee(String dateArrivee) {
+    public void setDateArrivee(Date dateArrivee) {
         this.dateArrivee = dateArrivee;
     }
 

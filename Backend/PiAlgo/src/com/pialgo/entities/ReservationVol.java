@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Sémia
@@ -13,7 +15,6 @@ public class ReservationVol {
     
     //var
     private int idReservationVol;
-    private String dateReservation;
     private int idUtilisateur;
     private int idVol;
     
@@ -23,29 +24,24 @@ public class ReservationVol {
     public ReservationVol() {
     }
 
-    public ReservationVol(int idReservationVol, String dateReservation, int idUtilisateur, int idVol) {
+    public ReservationVol(int idReservationVol, int idUtilisateur, int idVol) {
         this.idReservationVol = idReservationVol;
-        this.dateReservation = dateReservation;
         this.idUtilisateur = idUtilisateur;
         this.idVol = idVol;
     }
 
-    public ReservationVol(String dateReservation, int idUtilisateur, int idVol) {
-        this.dateReservation = dateReservation;
+    public ReservationVol(int idUtilisateur, int idVol) {
         this.idUtilisateur = idUtilisateur;
         this.idVol = idVol;
     }
-    
+   
     
     //Getters & Setters
     public int getIdReservationVol() {
         return idReservationVol;
     }
 
-    public String getDateReservation() {
-        return dateReservation;
-    }
-
+    
     public int getIdUtilisateur() {
         return idUtilisateur;
     }
@@ -58,9 +54,7 @@ public class ReservationVol {
         this.idReservationVol = idReservationVol;
     }
 
-    public void setDateReservation(String dateReservation) {
-        this.dateReservation = dateReservation;
-    }
+    
 
     public void setIdUtilisateur(int idUtilisateur) {
         this.idUtilisateur = idUtilisateur;
@@ -69,13 +63,21 @@ public class ReservationVol {
     public void setIdVol(int idVol) {
         this.idVol = idVol;
     }
+
+    
+
+    
+    
     
     
      //Affichage
+
     @Override
     public String toString() {
-        return "ReservationVol{" + "idReservationVol=" + idReservationVol + ", dateReservation=" + dateReservation + ", idUtilisateur=" + idUtilisateur + ", idVol=" + idVol + '}';
+        return "ReservationVol{" + "idReservationVol=" + idReservationVol + ", idUtilisateur=" + idUtilisateur + ", idVol=" + idVol + '}';
     }
+
+    
 
     
 
