@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="574.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Admin.GestionCroisiereController">
+   <children>
+      <Button layoutX="36.0" layoutY="41.0" mnemonicParsing="false" onAction="#retourButton" text="Retour" />
+      <ListView fx:id="listViewCroisiere" layoutX="28.0" layoutY="78.0" onMouseClicked="#listViewCroisiereSelection" orientation="HORIZONTAL" prefHeight="263.0" prefWidth="671.0" />
+      <Button layoutX="632.0" layoutY="426.0" mnemonicParsing="false" onAction="#supprimerAction" prefHeight="44.0" prefWidth="80.0" text="Supprimer" />
+      <Button layoutX="540.0" layoutY="426.0" mnemonicParsing="false" onAction="#ajouterAction" prefHeight="44.0" prefWidth="80.0" text="Ajouter" />
+      <TextField fx:id="refBateauTF" layoutX="20.0" layoutY="386.0" />
+      <DatePicker fx:id="dateDepartDP" layoutX="191.0" layoutY="448.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="compagnieNavigationTF" layoutX="20.0" layoutY="448.0" />
+      <TextField fx:id="portArriveTF" layoutX="191.0" layoutY="386.0" />
+      <TextField fx:id="portDepartTF" layoutX="20.0" layoutY="514.0" />
+      <TextField fx:id="nbCabinesTF" layoutX="365.0" layoutY="386.0" />
+      <TextField fx:id="prixTF" layoutX="365.0" layoutY="448.0" />
+      <Label layoutX="21.0" layoutY="361.0" text="Référence du bateau :" />
+      <Label layoutX="23.0" layoutY="428.0" text="Compagnie de navigation :" />
+      <Label layoutX="21.0" layoutY="492.0" text="Port de départ :" />
+      <Label layoutX="196.0" layoutY="361.0" text="Port d'arrivé :" />
+      <Label layoutX="188.0" layoutY="428.0" text="Date de départ :" />
+      <Label layoutX="191.0" layoutY="492.0" text="Date d'arrivée :" />
+      <Label layoutX="365.0" layoutY="425.0" text=" Prix d'une réservation" />
+      <Label layoutX="363.0" layoutY="361.0" text="Nombre de cabines :" />
+      <DatePicker fx:id="dateArriveDP" layoutX="191.0" layoutY="515.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button layoutX="540.0" layoutY="487.0" mnemonicParsing="false" onAction="#rechercherAction" prefHeight="44.0" prefWidth="80.0" text="Rechercher" />
+      <Button layoutX="632.0" layoutY="487.0" mnemonicParsing="false" onAction="#AfficherAction" prefHeight="44.0" prefWidth="80.0" text="Afficher " />
+   </children>
+</AnchorPane>

@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.sql.Date;
+
 
 
 
@@ -21,7 +23,7 @@ public class Vol {
     private String CompagnieAerienne;
     private String aeroDepart;
     private String aeroArrive;
-    private String dateDepart;
+    private Date dateDepart;
     private float duree;
     private int nbSieges;
     private float prix;
@@ -31,7 +33,7 @@ public class Vol {
     public Vol() {
     }
 
-    public Vol(int idVol, String refAvion, String CompagnieAerienne, String aeroDepart, String aeroArrive, String dateDepart, float duree, int nbSieges, float prix) {
+    public Vol(int idVol, String refAvion, String CompagnieAerienne, String aeroDepart, String aeroArrive, Date dateDepart, float duree, int nbSieges, float prix) {
         this.idVol = idVol;
         this.refAvion = refAvion;
         this.CompagnieAerienne = CompagnieAerienne;
@@ -43,7 +45,7 @@ public class Vol {
         this.prix = prix;
     }
 
-    public Vol(String refAvion, String CompagnieAerienne, String aeroDepart, String aeroArrive, String dateDepart, float duree, int nbSieges, float prix) {
+    public Vol(String refAvion, String CompagnieAerienne, String aeroDepart, String aeroArrive, Date dateDepart, float duree, int nbSieges, float prix) {
         this.refAvion = refAvion;
         this.CompagnieAerienne = CompagnieAerienne;
         this.aeroDepart = aeroDepart;
@@ -76,7 +78,7 @@ public class Vol {
         return aeroArrive;
     }
 
-    public String getDateDepart() {
+    public Date getDateDepart() {
         return dateDepart;
     }
 
@@ -112,7 +114,7 @@ public class Vol {
         this.aeroArrive = aeroArrive;
     }
 
-    public void setDateDepart(String dateDepart) {
+    public void setDateDepart(Date dateDepart) {
         this.dateDepart = dateDepart;
     }
 

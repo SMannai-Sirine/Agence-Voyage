@@ -7,6 +7,7 @@ package services;
 
 import interfaces.Icroisiere;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,8 +53,8 @@ public class ServiceCroisiere implements Icroisiere{
             ps.setString(2, c.getCompagnieNavigation());
             ps.setString(3, c.getPortDepart());
             ps.setString(4, c.getPortArrive());
-            ps.setString(5, c.getDateDepart());
-            ps.setString(6, c.getDateArrivee());
+            ps.setDate(5, c.getDateDepart());
+            ps.setDate(6, c.getDateArrivee());
             ps.setInt(7, c.getNbCabines());
             ps.setFloat(8, c.getPrixCroisiere());
             ps.execute();
@@ -66,7 +67,7 @@ public class ServiceCroisiere implements Icroisiere{
     
     
     @Override
-    public void modifierCroisiere (int id,String newRefBateau,String newCompagnieNavigation,String newPortDepart,String newPortArrivee,String newDateDepart,String newDateArrivee,int newNbCabines,float newPrixCroisiere){
+    public void modifierCroisiere (int id,String newRefBateau,String newCompagnieNavigation,String newPortDepart,String newPortArrivee,Date newDateDepart,Date newDateArrivee,int newNbCabines,float newPrixCroisiere){
     
         String request = "UPDATE `croisiere` SET `refBateau`='"+newRefBateau+"',`CompagnieNavigation`='"+newCompagnieNavigation+"',`portDepart`='"+newPortDepart+"',`portArrive`='"+newPortArrivee+"',`dateDepart`='"+newDateDepart+"',`dateArrivee`='"+newDateArrivee+"',`nbCabines`='"+newNbCabines+"',`prixCroisiere`='"+newPrixCroisiere+"' WHERE(`idCroisiere`= "+id+")";
         try {
@@ -106,7 +107,7 @@ public class ServiceCroisiere implements Icroisiere{
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {                
-                croisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
+                croisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getDate(6),rs.getDate(7),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
             }
             
         } catch (SQLException ex) {
@@ -118,7 +119,7 @@ public class ServiceCroisiere implements Icroisiere{
     }
     
     
-    public List<Croisiere> rechercheTrieCroisiere(String portDepart,String portArrive,String dateDepart){
+    /*public List<Croisiere> rechercheTrieCroisiere(String portDepart,String portArrive,Date dateDepart){
         
         List<Croisiere> listCroisieres = new ArrayList<>();
         String Req = "SELECT * FROM  `croisiere`  WHERE ((`portDepart` like '"+portDepart+"') and (`portArrive` like '"+portArrive+"') and (`dateDepart` like '"+dateDepart+"')and (`nbCabines` > 0)) ORDER BY (`prixCroisiere`);";
@@ -127,7 +128,82 @@ public class ServiceCroisiere implements Icroisiere{
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(Req);
             while (rs.next()) {                
-                listCroisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
+                listCroisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString("refBateau"), rs.getString("compagnieNavivation"), rs.getString("portDepart"), rs.getString("portArrive"),rs.getDate("dateDepart"),rs.getDate("dateArrive"),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        return listCroisieres;
+        
+        
+    }*/
+    
+    
+    public List<Croisiere> rechercheCroisiere(String refBateau,String compagnieNavigation,String portDepart,String portArrive,String dateDepart,String dateArrivee,String nbCabines,String prix){   
+        List<Croisiere> listCroisieres = new ArrayList<>();
+        
+        String Req = "SELECT * FROM  `croisiere` ";// WHERE ((`refAvion` like '"+refAvion+"') and (`compagnieAerienne` like '"+compagnieAerienne+"') and (`aeroDepart` like '"+aeroDepart+"') and (`aeroArrive` like '"+aeroArrive+"') and (`dateDepart` = '"+dateDepart+"')and (`duree` = '"+duree+"')and (`nbSieges` = '"+nbSieges+"')and (`prix` = '"+prix+"'));";
+         int nbparam=0;
+        if(!refBateau.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`refBateau` like '"+refBateau+"') ";
+        }
+        if(!compagnieNavigation.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`compagnieNavigation` like '"+compagnieNavigation+"')";
+        }
+        
+        if(!portDepart.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`portDepart` like '"+portDepart+"')";
+        }
+        if(!portArrive.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`portArrive` like '"+portArrive+"')";
+        }
+         if(!dateDepart.equals(""))
+        {Date myDate = Date.valueOf(dateDepart);
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`dateDepart` = '"+myDate+"')";
+        }
+         if(!dateArrivee.equals(""))
+        {Date myDate2 = Date.valueOf(dateArrivee);
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`dateArrivee` = '"+myDate2+"')";
+        } 
+          if(!nbCabines.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`nbCabines` = '"+Integer.parseInt(nbCabines)+"')";
+        }
+         if(!prix.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`prixCroisiere` = '"+Float.parseFloat(prix)+"')";
+        } 
+        if(nbparam>0)
+        Req=Req+")";
+        System.out.println(Req);
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(Req);
+            while (rs.next()) {                
+                listCroisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString("refBateau"), rs.getString("compagnieNavigation"), rs.getString("portDepart"), rs.getString("portArrive"),rs.getDate("DateDepart"),rs.getDate("DateArrivee"),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
             }
             
         } catch (SQLException ex) {
@@ -140,4 +216,62 @@ public class ServiceCroisiere implements Icroisiere{
         
     }
     
+    
+    
+    @Override
+     public List<Croisiere> rechercheCroisiereTrie(String compagnieNavigation,String portDepart,String portArrive,String dateDepart,String dateArrivee){   
+        List<Croisiere> listCroisieres = new ArrayList<>();
+        
+        String Req = "SELECT * FROM  `croisiere` ";// WHERE ((`refAvion` like '"+refAvion+"') and (`compagnieAerienne` like '"+compagnieAerienne+"') and (`aeroDepart` like '"+aeroDepart+"') and (`aeroArrive` like '"+aeroArrive+"') and (`dateDepart` = '"+dateDepart+"')and (`duree` = '"+duree+"')and (`nbSieges` = '"+nbSieges+"')and (`prix` = '"+prix+"'));";
+         int nbparam=0;
+        
+        if(!compagnieNavigation.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`compagnieNavigation` like '"+compagnieNavigation+"')";
+        }
+        if(!portDepart.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`portDepart` like '"+portDepart+"')";
+        }
+        if(!portArrive.equals(""))
+        {
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`portArrive` like '"+portArrive+"')";
+        }
+         if(!dateDepart.equals(""))
+        {Date myDate = Date.valueOf(dateDepart);
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`dateDepart` = '"+myDate+"')";
+        }
+          if(!dateArrivee.equals(""))
+        {Date myDate1 = Date.valueOf(dateArrivee);
+            if(nbparam==0) {Req=Req+"WHERE (";nbparam++;}
+            else {Req=Req+" and ";nbparam++;}
+            Req=Req+"(`dateArrivee` = '"+myDate1+"')";
+        }
+        if(nbparam>0)
+        Req=Req+"and (`nbCabines` > 0)) ORDER BY (`prix`)";
+        //System.out.println(Req);
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(Req);
+            while (rs.next()) {                
+                listCroisieres.add(new Croisiere(rs.getInt("idCroisiere"), rs.getString("refBateau"), rs.getString("compagnieNavigation"), rs.getString("portDepart"), rs.getString("portArrive"),rs.getDate("dateDepart"),rs.getDate("dateArrivee"),rs.getInt("nbCabines"),rs.getFloat("prixCroisiere")));
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        return listCroisieres;
+        
+        
+    }
 }

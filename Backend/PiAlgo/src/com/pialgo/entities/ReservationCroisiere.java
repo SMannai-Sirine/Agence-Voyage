@@ -12,7 +12,6 @@ package model;
 public class ReservationCroisiere {
     
     private int idReservationCroisiere;
-    private String dateReservationCroisiere;
     private int idUtilisateur;
     private int idCroisiere;
 
@@ -21,15 +20,13 @@ public class ReservationCroisiere {
     public ReservationCroisiere() {
     }
 
-    public ReservationCroisiere(int idReservationCroisiere, String dateReservationCroisiere, int idUtilisateur, int idCroisiere) {
+    public ReservationCroisiere(int idReservationCroisiere, int idUtilisateur, int idCroisiere) {
         this.idReservationCroisiere = idReservationCroisiere;
-        this.dateReservationCroisiere = dateReservationCroisiere;
         this.idUtilisateur = idUtilisateur;
         this.idCroisiere = idCroisiere;
     }
 
-    public ReservationCroisiere(String dateReservationCroisiere, int idUtilisateur, int idCroisiere) {
-        this.dateReservationCroisiere = dateReservationCroisiere;
+    public ReservationCroisiere( int idUtilisateur, int idCroisiere) {
         this.idUtilisateur = idUtilisateur;
         this.idCroisiere = idCroisiere;
     }
@@ -38,9 +35,7 @@ public class ReservationCroisiere {
         return idReservationCroisiere;
     }
 
-    public String getDateReservationCroisiere() {
-        return dateReservationCroisiere;
-    }
+    
 
     public int getIdUtilisateur() {
         return idUtilisateur;
@@ -54,9 +49,7 @@ public class ReservationCroisiere {
         this.idReservationCroisiere = idReservationCroisiere;
     }
 
-    public void setDateReservationCroisiere(String dateReservationCroisiere) {
-        this.dateReservationCroisiere = dateReservationCroisiere;
-    }
+    
 
     public void setIdUtilisateur(int idUtilisateur) {
         this.idUtilisateur = idUtilisateur;
@@ -68,8 +61,10 @@ public class ReservationCroisiere {
 
     @Override
     public String toString() {
-        return "ReservationCroisiere{" + "idReservationCroisiere=" + idReservationCroisiere + ", dateReservationCroisiere=" + dateReservationCroisiere + ", idUtilisateur=" + idUtilisateur + ", idCroisiere=" + idCroisiere + '}';
+        return "ReservationCroisiere{" + "idReservationCroisiere=" + idReservationCroisiere + ", idUtilisateur=" + idUtilisateur + ", idCroisiere=" + idCroisiere + '}';
     }
+
+    
     
     
     
