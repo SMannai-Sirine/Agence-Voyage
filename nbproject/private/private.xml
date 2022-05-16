@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/test/MainClass.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/entities/Reservation.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/AjouterHotelController.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/utils/MyConnection.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/entities/IService.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/ModifierRestaurantController.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/AfficherHotelController.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/AjouterRestaurantController.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/ModifierHotelController.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/sevices/restaurantCRUD.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/sevices/HotelCRUD.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/entities/Hotel.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/entities/Restaurant.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/NewFXMain.java</file>
+            <file>file:/C:/Users/21658/Desktop/connexionJDBC/src/pi/gui/AfficherRestaurantController.java</file>
+        </group>
+    </open-files>
+</project-private>

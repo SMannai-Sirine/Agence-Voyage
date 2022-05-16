@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.gui.AfficherHotelController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="799.0" prefWidth="1262.0" style="-fx-background-color: #323996;">
+         <children>
+            <TextField fx:id="inputRech" layoutX="190.0" layoutY="124.0" prefHeight="53.0" prefWidth="360.0" promptText="Rechercher.." style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+            <Button fx:id="supp" layoutX="683.0" layoutY="704.0" mnemonicParsing="false" onAction="#supp" prefHeight="43.0" prefWidth="119.0" style="-fx-background-color: #DC143C;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="supp1" layoutX="510.0" layoutY="704.0" mnemonicParsing="false" onAction="#Modif" prefHeight="43.0" prefWidth="119.0" style="-fx-background-color: #1E7FCB;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#df0c0c" height="523.0" layoutX="24.0" layoutY="195.0" stroke="BLACK" strokeType="INSIDE" width="336.0" />
+            <Button fx:id="Ajouter" layoutX="868.0" layoutY="704.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="43.0" prefWidth="119.0" style="-fx-background-color: #32CD32;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="370.0" layoutY="29.0" text="Les Hotels" textFill="#bc0909">
+               <font>
+                  <Font name="Californian FB Bold" size="60.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="restau" layoutX="38.0" layoutY="347.0" onAction="#restau" prefHeight="35.0" prefWidth="204.0" text="Gestion des Restaurants" textFill="#faf8f8">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font></Hyperlink>
+            <Hyperlink layoutX="48.0" layoutY="476.0" prefHeight="24.0" prefWidth="181.0" text="Gestion des Hotels" textFill="#fcfafa">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font></Hyperlink>
+            <TableView fx:id="tableview" layoutX="395.0" layoutY="193.0" prefHeight="471.0" prefWidth="791.0">
+              <columns>
+                <TableColumn fx:id="nom_hotel" prefWidth="57.0" text="Nom " />
+                  <TableColumn fx:id="nbetoile" prefWidth="168.0" text="Nombres Etoile" />
+                  <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                  <TableColumn fx:id="nbchambre" prefWidth="136.0" text="Nombres Chambres" />
+                  <TableColumn fx:id="nbrestaurant" prefWidth="161.0" text="Nombres Restaurant" />
+                  <TableColumn fx:id="nbpiscine" prefWidth="96.0" text="nbpiscine" />
+                  <TableColumn fx:id="adresse_rest" prefWidth="94.0" text="adresse" />
+                  <TableColumn fx:id="villehotel" prefWidth="78.0" text="villehotel" />
+              </columns>
+            </TableView>
+            <Button fx:id="AFFEtoile" graphicTextGap="22.0" layoutX="588.0" layoutY="129.0" mnemonicParsing="false" onAction="#AFFEtoile" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #32CD32;" stylesheets="@style.css" text="Afficher Par Etoiles" textAlignment="RIGHT" textFill="#e7e5e5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="AFF21" layoutX="853.0" layoutY="129.0" mnemonicParsing="false" onAction="#AFF21" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #32CD32;" stylesheets="@style.css" text="Afficher Par Ville" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="65.0" fitWidth="62.0" layoutX="784.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/1200px-Circle-icons-star.svg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="75.0" fitWidth="62.0" layoutX="1052.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../235889.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="pdf2" layoutX="1020.0" layoutY="29.0" mnemonicParsing="false" onAction="#pdf2" prefHeight="43.0" prefWidth="93.0" style="-fx-background-color: #DC143C;" text="PDF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="88.0" fitWidth="119.0" layoutX="234.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/242452.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="98.0" fitWidth="94.0" layoutX="233.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../235889.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="62.0" fitWidth="100.0" layoutX="1125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/icone-pdf-symbole-png-rouge.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

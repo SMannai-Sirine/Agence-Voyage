@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi.gui.ModifierRestaurantController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="736.0" prefWidth="819.0" style="-fx-background-color: #323996;">
+         <children>
+            <Label fx:id="welcome" layoutX="202.0" layoutY="14.0" text="Modifier Restaurant" textFill="#f2f3fa">
+               <font>
+                  <Font name="System Italic" size="32.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nom_rest" layoutX="147.0" layoutY="162.0" prefHeight="55.0" prefWidth="401.0" promptText="nom.." />
+            <Button fx:id="A" layoutX="288.0" layoutY="644.0" mnemonicParsing="false" onAction="#insert" prefHeight="47.0" prefWidth="166.0" style="-fx-background-color: #1E7FCB; -fx-border-radius: 50; -fx-background-radius: 50;" text="Confirmer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="prec" layoutX="24.0" layoutY="24.0" onAction="#prec" stylesheets="@style.css" text="Retour">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Hyperlink>
+            <Label layoutX="157.0" layoutY="134.0" prefHeight="0.0" prefWidth="116.0" text="Nom restaurant" textFill="#fcf6f6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="numtel_rest" layoutX="147.0" layoutY="255.0" prefHeight="55.0" prefWidth="401.0" promptText="numtel.." />
+            <TextField fx:id="adresse_rest" layoutX="147.0" layoutY="338.0" prefHeight="55.0" prefWidth="401.0" promptText="adresse.." />
+            <TextField fx:id="ville_rest" layoutX="147.0" layoutY="417.0" prefHeight="55.0" prefWidth="401.0" promptText="ville.." />
+            <TextField fx:id="nbtable_rest" layoutX="147.0" layoutY="497.0" prefHeight="55.0" prefWidth="401.0" promptText="nbtable.." />
+            <TextField fx:id="type_rest" layoutX="147.0" layoutY="573.0" prefHeight="55.0" prefWidth="401.0" promptText="type.." />
+            <Label layoutX="170.0" layoutY="234.0" prefHeight="22.0" prefWidth="141.0" text="numero telephone" textFill="#efe8e8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="170.0" layoutY="317.0" prefHeight="0.0" prefWidth="116.0" text="adresse" textFill="#f2eaea">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="393.0" prefHeight="0.0" prefWidth="116.0" text="ville" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="472.0" prefHeight="0.0" prefWidth="116.0" text="nombre table" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="552.0" prefHeight="0.0" prefWidth="116.0" text="type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelid" layoutX="640.0" layoutY="99.0" opacity="0.0" text="labelid" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="627.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/242452.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
